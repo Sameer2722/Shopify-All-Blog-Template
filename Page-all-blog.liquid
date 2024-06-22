@@ -1,0 +1,40 @@
+{{ 'page-all-blogs.css' | asset_url | stylesheet_tag }}
+
+{% section 'image-banner' %}
+{% section 'blog-filter' %}
+
+<div class="container">
+
+  <div class="page-width">
+    
+  <div class="blog-row">
+      
+     {% assign blog_handles = "knowledge-base,nutrition,training,mindset,recovery" | split: "," %}
+
+   {% for handle in blog_handles %}
+   
+        {% for article in blogs[handle].articles %}
+          <div class="blog-content">
+          <div class="blog-img">
+                <img src="{{ article.image | img_url: 'master' }}">
+          </div>
+               <h2><a class="blog-link" href="{{ article.url }}">{{ article.title }}</a></h2>
+             <div>  
+              {{ article.excerpt }}
+              {{ article.content | strip_html | truncatewords: 10 }}
+            </div>
+          </div>
+         {% endfor %}
+   
+     {% endfor %}
+    
+    </div>
+
+  </div>
+  {%- if paginate.pages > 1 -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+</div>
+
+{% section 'rich-text' %} 
+
