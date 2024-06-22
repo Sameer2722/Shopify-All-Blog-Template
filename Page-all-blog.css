@@ -1,0 +1,109 @@
+#shopify-section-image-banner #Banner-image-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: #000;
+    opacity: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: url(/cdn/shop/files/curve-shape.svg?v=1716873838);
+    opacity: 1;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #0d0d0d59;
+}
+.container{
+  padding-top:64px;
+  padding-bottom:64px;
+}  
+.blog-row {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+}
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    width: 100%;
+}
+.blog-content h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+.blog-img {
+    width:100%;
+    height: 400px;
+}
+  .blog-img img {
+    width: 100%;
+    height: 100%;
+    object-position:center;
+    object-fit:cover;
+}
+  .blog-content .blog-link{
+    text-decoration:none;
+    color:#000;
+    font-size:24px;
+    font-family: 'Heading Font' !important;
+  }
+  .blog-content h2 .blog-link:hover{
+    text-decoration:underline;
+}
+#shopify-section-rich-text .rich-text__buttons  .button {
+    background: transparent;
+    color: #222;
+    border:1px solid #222;
+    font-weight:600;
+}
+#shopify-section-rich-text .rich-text__buttons .button:hover{
+  background-color:#f5e600;
+  border-color:#f5e600;
+}
+#shopify-section-rich-text .rich-text__buttons .button:after{
+  content:unset;
+}
+#shopify-section-rich-text .rich-text__buttons .button:before{
+  content:unset;
+}
+
+@media screen and (max-width: 1200px){
+  .blog-content .blog-link {
+    font-size: 20px;
+}
+}
+@media screen and (max-width: 1024px){
+.blog-img {
+    height: 325px;
+}
+}
+@media screen and (max-width: 900px){
+.blog-content {
+    max-width: 45%;   
+}
+}
+@media screen and (max-width: 900px){
+.blog-row {
+    column-gap: 25px;
+    row-gap: 25px;
+}
+}
+@media screen and (max-width: 600px){
+.blog-content .blog-link {
+    font-size: 16px;
+}
+.blog-row {
+    flex-direction: column;
+}
+.blog-content {
+    max-width: 100%;
+}
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+}
